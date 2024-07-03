@@ -14,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.business_card.ui.theme.Business_CardTheme
@@ -45,24 +46,21 @@ fun ComposeCardContactDetails(modifier: Modifier = Modifier) {
     ) {
         Row(
             modifier = modifier
-
         ) {
-            TypeOfContact(contactType = "t:", modifier = modifier)
-            Text("0789667 12344")
+            TypeOfContact(contactType = stringResource(id = R.string.contact_type_phone), modifier = modifier)
+            Text(text = stringResource(id = R.string.phone_contact))
         }
         Row(
             modifier = modifier,
-
             ) {
-            TypeOfContact(contactType = "e:", modifier = modifier)
-            Text("faisal@android.com")
+            TypeOfContact(contactType = stringResource(id = R.string.contact_type_email), modifier = modifier)
+            Text(text = stringResource(id = R.string.email_contact))
         }
         Row(
             modifier = modifier,
-
             ) {
-            TypeOfContact(contactType = "w:", modifier = modifier)
-            Text("github.com/faisalmemon")
+            TypeOfContact(contactType = stringResource(id = R.string.contact_type_web), modifier = modifier)
+            Text(text = stringResource(id = R.string.web_contact))
         }
     }
 }
