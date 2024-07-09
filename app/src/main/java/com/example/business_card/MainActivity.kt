@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.business_card.ui.theme.Business_CardTheme
@@ -43,7 +44,9 @@ fun BusinessCard(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
     ) {
-        Text(text = stringResource(id = R.string.job_role))
+        Text(text = stringResource(id = R.string.job_role),
+            fontFamily = FontFamily.Serif,
+            fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(40.dp))
         Row {
             Spacer(modifier = modifier.width(100.dp))
@@ -56,6 +59,7 @@ fun BusinessCard(modifier: Modifier = Modifier) {
 fun TypeOfContact(modifier: Modifier = Modifier, contactType: String) {
     Text( text = contactType, modifier = Modifier.width(20.dp))
 }
+
 @Composable
 fun ComposeCardContactDetails(modifier: Modifier = Modifier) {
     Column(
