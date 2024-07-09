@@ -15,11 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.business_card.ui.theme.Business_CardTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,12 +34,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
 fun TypeOfContact(modifier: Modifier = Modifier, contactType: String) {
     Text( text = contactType, modifier = Modifier.width(20.dp))
 }
-
 @Composable
 fun ComposeCardContactDetails(modifier: Modifier = Modifier) {
     Column(
@@ -48,23 +48,25 @@ fun ComposeCardContactDetails(modifier: Modifier = Modifier) {
             modifier = modifier
         ) {
             TypeOfContact(contactType = stringResource(id = R.string.contact_type_phone), modifier = modifier)
-            Text(text = stringResource(id = R.string.phone_contact))
+            Text(text = stringResource(id = R.string.phone_contact),
+                fontFamily = FontFamily.SansSerif)
         }
         Row(
             modifier = modifier,
-            ) {
+        ) {
             TypeOfContact(contactType = stringResource(id = R.string.contact_type_email), modifier = modifier)
-            Text(text = stringResource(id = R.string.email_contact))
+            Text(text = stringResource(id = R.string.email_contact),
+                fontFamily = FontFamily.SansSerif)
         }
         Row(
             modifier = modifier,
-            ) {
+        ) {
             TypeOfContact(contactType = stringResource(id = R.string.contact_type_web), modifier = modifier)
-            Text(text = stringResource(id = R.string.web_contact))
+            Text(text = stringResource(id = R.string.web_contact),
+                fontFamily = FontFamily.SansSerif)
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
