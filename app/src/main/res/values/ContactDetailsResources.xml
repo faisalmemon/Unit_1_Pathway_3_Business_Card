@@ -6,4 +6,5 @@
     <string name="contact_type_phone">t:</string>
     <string name="contact_type_email">e:</string>
     <string name="contact_type_web">w:</string>
+    <string name="job_role">Software Engineer</string>
 </resources>
