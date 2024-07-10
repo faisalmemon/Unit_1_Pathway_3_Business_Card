@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.business_card.ui.theme.Business_CardTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,10 +41,24 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier) {
+    Row {
+        Spacer(modifier = modifier.width(40.dp))
+        BusinessCardVerticalInterior(modifier = modifier)
+    }
+}
+
+@Composable
+fun BusinessCardVerticalInterior(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
     ) {
+        Text(text = stringResource(id = R.string.full_name),
+            fontFamily = FontFamily.Monospace,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold)
+        Spacer(modifier = modifier.height(30.dp))
+
         Text(text = stringResource(id = R.string.job_role),
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold)
