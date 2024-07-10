@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,6 +34,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.business_card.ui.theme.Business_CardTheme
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.res.colorResource
 
 
 class MainActivity : ComponentActivity() {
@@ -53,8 +56,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier,
                  shape: RoundedCornerShape = RoundedCornerShape(50.dp)) {
-    Row(modifier = modifier.clip(shape).background(Color.Red)) {
-        Spacer(modifier = modifier.width(40.dp))
+    Row(modifier = modifier
+        .padding(20.dp)
+        .clip(shape)
+        .background(color = colorResource(id = R.color.business_card_background_color))) {
+        Spacer(modifier = modifier.width(30.dp))
         BusinessCardVerticalInterior(modifier = modifier)
     }
 }
@@ -64,6 +70,7 @@ fun BusinessCardVerticalInterior(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .padding(3.dp)
     ) {
         Text(text = stringResource(id = R.string.full_name),
             fontFamily = FontFamily.Monospace,
@@ -74,11 +81,13 @@ fun BusinessCardVerticalInterior(modifier: Modifier = Modifier) {
         Text(text = stringResource(id = R.string.job_role),
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold)
-        Spacer(modifier = modifier.height(40.dp))
+        Spacer(modifier = modifier.height(30.dp))
         Row {
-            Spacer(modifier = modifier.width(100.dp))
+            Spacer(modifier = modifier.width(70.dp))
             ComposeCardContactDetails(modifier = modifier)
         }
+        Spacer(modifier = modifier.height(20.dp))
+
     }
 }
 
